@@ -1,24 +1,15 @@
-/*
- * @name 伪造VIP - ltapi.huantukj.com
- * @match ^https:\/\/ltapi\.huantukj\.com\/v1\/auth\/(pay|goods)$
- */
+/*        
+        ➪：JP APP
 
-let body = $response.body;
+       
 
-try {
-  let obj = JSON.parse(body);
+𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹𒊹
 
-  // 修改会员相关信息（根据接口不同调整字段）
-  if (obj?.data) {
-    obj.data.isVip = 1;
-    obj.data.vipName = "超级会员";
-    obj.data.expireTime = "2099-12-31";
-    obj.data.payStatus = true;
-    obj.data.level = "pro";
-  }
+[rewrite_local] 
+^https?:\/\/api\.mercari\.jp\/services\/home\/v2\/homefeed-contents url script-response-body https://raw.githubusercontent.com/Rnik666/YJTJS/main/JPAPP.js
 
-  $done({ body: JSON.stringify(obj) });
-} catch (e) {
-  console.log("修改失败: " + e);
-  $done({ body });
-}
+[MITM]
+hostname = api.mercari.jp
+
+*/
+;eval(function(p,a,c,k,e,r){e=String;if(!''.replace(/^/,String)){while(c--)r[c]=k[c]||c;k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('2 0=$3.0;0=0.4(/("5"\\1*:\\1*")[^"]*"/6,\'$7"\');$8({0});',9,9,'body|s|let|response|replace|result|g|1Rnik6666|done'.split('|'),0,{}));
